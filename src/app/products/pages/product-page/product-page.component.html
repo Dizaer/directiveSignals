@@ -15,7 +15,8 @@
 
         <div class="col-auto">
             <span customLabel
-                  [color]="color"  
+                  [color]="color"
+                  [errors]="myForm.get('name')?.errors"  
             >Tengo hambre we UwU</span>
         </div>
 
