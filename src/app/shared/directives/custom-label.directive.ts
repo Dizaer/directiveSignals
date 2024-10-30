@@ -48,13 +48,14 @@ export class CustomLabelDirective implements OnInit {
       this.htmlElement.nativeElement.innerText = 'Este campo es requerido, vamo, escribe algo retrasadito';
       return;
     }
-    if ( errors.includes('email') ) {
-      this.htmlElement.nativeElement.innerText = 'Asi no se escribe un mail pelotudito, ponete a estudiar mejor';
+    if ( errors.includes('minlength') ) {
+      const required = this._errors!['minlength']['requiredLength'];
+      const actual = this._errors!['minlength']['actualLength'];
+      this.htmlElement.nativeElement.innerText = `Na weon cachai, tan solo haz puesto ${ actual } de los ${ required } caracteres necesarios, sos tremendo aweonao`;
       return;
     }
-    if ( errors.includes('minlength') ) {
-
-      this.htmlElement.nativeElement.innerText = 'Na weon cachai, tan solo haz puesto x caracteres de x, sos tremendo aweonao';
+    if ( errors.includes('email') ) {
+      this.htmlElement.nativeElement.innerText = 'Asi no se escribe un mail pelotudito, ponete a estudiar mejor';
       return;
     }
   }
